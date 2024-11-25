@@ -1,5 +1,6 @@
 ### Disclaimer:
-Some of these vehicles use drop-in, which is a pain in the arse to set up. If there's no setup video... I'm sorry and good luck.
+1. Some of these vehicles use drop-in, which is a pain in the arse to set up. If there's no setup video... I'm sorry and good luck.
+2. Pictures are sometimes very old and may differ slightly from actual schematics due to some tweaks later on. Taking pictures at <5 FPS with lagspikes is a hassle.
 # Some pictures I guess.
 ## T-90M
 ![T-90M_side](https://github.com/user-attachments/assets/44df28b0-5dab-4373-8896-4028f6a269c9)
