@@ -1,12 +1,9 @@
-local testing = periphemu ~= nil
-if testing then periphemu.create("front", "monitor") end
-
 -- [[ PERIPHERAL SETUP ]]
 
 local MONITOR = peripheral.find("monitor")
 MONITOR.setPaletteColour(colours.white, colours.packRGB(0, 1, 0)) -- Full green
 MONITOR.setPaletteColour(colours.black, colours.packRGB(0, 0, 0)) -- Full black
-MONITOR.setTextScale((not testing) and 0.5 or 1.5)
+MONITOR.setTextScale(0.5)
 
 -- [[ ALIASES ]]
 
