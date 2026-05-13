@@ -183,7 +183,7 @@ Actually, it's a Heads Down Display in this case. It was originally made for VS2
 
 1. **Back. Up. Your. Stuff.** Consider everything that's assembled as 'already lost'. I am begging you, make copies of your world every so often. My helicopter randomly vanished after I already had spent several days on it. Thank the heavens there was a backup; I would've given up otherwise.
 
-2. Assuming that the Sable behaves similarly to Valkyrien Skies will shoot you in the foot. I assumed that CBC cannons had no collision, but they actually do! This required relocating the cannon mount and resorting to spamming energy transmitters, sorry! Call it a skill issue on my part. Another thing is that contraptions on mechanical bearings contribute to weight, so you can't 'cheat'. This resulted in a painful process of rebalancing the centre of mass.
+2. Assuming that Sable behaves similarly to Valkyrien Skies will shoot you in the foot. I assumed that CBC cannons had no collision, but they actually do! This required relocating the cannon mount and resorting to spamming energy transmitters, sorry! Call it a skill issue on my part. Another thing is that contraptions on mechanical bearings contribute to weight, so you can't 'cheat'. This resulted in a painful process of rebalancing the centre of mass.
 
 3. Excessive use of copycats unfortunately results in severely degraded flight performance. They are really heavy! A corner slice/board/layer weighing 1kpg is rough. If you decide to use them in your own builds, consider using a datapack/mod to reduce the weight of copycats.
 
