@@ -193,11 +193,13 @@ For cannons, here are some neat commands.
 
 ```
 /data get block x y z
-/data modify block x y z CannonYaw set value [n]
-/data modify block x y z CannonPitch set value [n]
+/data modify block x y z CannonYaw set value n
+/data modify block x y z CannonPitch set value n
 ```
 
 `x y z` corresponds to the cannon mount location.
+
+`n` is the angle you want to set it to in degrees.
 
 Useful if you want to quickly set cannon angle quickly without going through the trouble of rotating precisely.
 
