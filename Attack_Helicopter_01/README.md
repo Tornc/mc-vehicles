@@ -17,6 +17,7 @@
 3. [Usage](#usage)
    - [Setup](#setup)
      - [Before we start](#before-we-start)
+     - [Actual setup](#actual-setup)
    - [Controls](#controls)
    - [Reading the HUD](#reading-the-hud)
 4. [Lessons learnt](#lessons-learnt)
@@ -33,7 +34,7 @@
 | Top speed @ Y=63 (sea)  | 10 b/s                                |
 | Top speed @ Y=139 (max) | 8 b/s                                 |
 | 1x Autocannon           | 300 RPM (burst) / 150 RPM (sustained) |
-| 2x Big cannon           | 40 b/s velocity                       |
+| 2x Big cannon           | 40-160 b/s velocity (configurable)    |
 | Engine                  | 192 RPM, su usage 10557.75/12288      |
 
 ## Mods
@@ -72,11 +73,15 @@ If there are any dependencies not mentioned here, please install them.
 
 #### Before we start...
 
-Download the schematics and lua scripts in the `schems` and `scripts` folders.
+Download the schematics and Lua scripts in the `schems` and `scripts` folders.
 
 The build consists of 3 schematics and 1 schematic storing the controllers. It is _crucial_ to place the first 3 in order (as indicated by s1, s2, s3), as the mechanical bearings are disassembled initially. For some reason, assembled mechanical bearing contraptions don't render properly when pasted using schematics.
 
-Do **not** rotate anything. It will mess up the control scheme and HUD.
+Do **not** rotate the schematics. It will mess up the control scheme and HUD.
+
+If, after completing the setup process, the mechanical bearings ever get disassembled, the helicopter will implode.
+
+#### Actual setup
 
 1. Paste the `helo_s0_controls_v2.nbt` schematic and rename the linked controllers.
 
@@ -130,19 +135,19 @@ Do **not** rotate anything. It will mess up the control scheme and HUD.
 
 ![Commands to be run](docs/setup/12.png)
 
-15. Right click on the computer at the front.
+15. Right click on the computer at the front. It might not look like there's a computer, but that's because it overlaps with a zinc block on a mechanical bearing contraption. You can click through it.
 
 ![Location of the front computer](docs/setup/13.png)
 
 16. Do the same thing with `hud_light.lua`: drag it into the terminal, then doing `rename hud_light.lua startup.lua` and `reboot`.
 
-17. Do a controller check. Start the engine by pressing SPACE on the HELI_MISC controller. The main propellor should move a little. Verify if all the controls work (see [Controls section](#controls)).
+17. Start the engine by pressing SPACE on the HELI_MISC controller. The main propellor should move a little. **You will need to restart the engine every time the helicopter gets unloaded.** Verify if the rest of the controls work (see [Controls section](#controls)).
 
 18. Fill the hopper in the cockpit with ammo for the autocannon. I recommend adding tracers for prettiness.
 
 ![Location of the hopper](docs/setup/14.png)
 
-19. For the big cannon ammo, I use High Explosive with proximity fuze. But if you have other mods with cooler explosives, you can use those. Use **Powder Charges**, not Big Cartridges. Now load the 2 big cannons ... manually.
+19. For the big cannon ammo, I use High Explosive with proximity fuze. But if you have other mods with cooler explosives, you can use those. Use Powder Charges or Big Cartridges. Play around the amount of charges if you want to, but keep in mind that the accuracy is horrible at longer ranges. Now load the 2 big cannons ... manually.
 
 ![Ammunition of the 2 big cannons](docs/setup/15.png)
 
@@ -180,7 +185,7 @@ Actually, it's a Heads Down Display in this case. It was originally made for VS2
 
 2. Assuming that the Sable behaves similarly to Valkyrien Skies will shoot you in the foot. I assumed that CBC cannons had no collision, but they actually do! This required relocating the cannon mount and resorting to spamming energy transmitters, sorry! Call it a skill issue on my part. Another thing is that contraptions on mechanical bearings contribute to weight, so you can't 'cheat'. This resulted in a painful process of rebalancing the centre of mass.
 
-3. Excessive use of copycats unfortunately results in severely degraded flight performance. They are really heavy! A corner slice/board/layer weighing 1kpg is rough. Consider using a datapack/mod to reduce the weight of copycats.
+3. Excessive use of copycats unfortunately results in severely degraded flight performance. They are really heavy! A corner slice/board/layer weighing 1kpg is rough. If you decide to use them in your own builds, consider using a datapack/mod to reduce the weight of copycats.
 
 ## Trivia
 
@@ -202,4 +207,4 @@ Useful if you want to quickly set cannon angle quickly without going through the
 
 `dx dy dz` are how much you want the cannon to move relative to its current position.
 
-Extremely powerful, as it allows you to move the cannon _anywhere_ you want. Allows cannons with half-block offsets, double-barreled autocannons (think Create Big Cannons: Advanced Technologies), but with extreme customisability. And your cannon mount doesn't even have to be nearby.
+Extremely powerful, as it allows you to move the cannon _anywhere_ you want. Opens the door for cannons with half-block offsets, double-barreled autocannons (think Create Big Cannons: Advanced Technologies, but with extreme customisability), etc. And your cannon mount doesn't even have to be nearby.
