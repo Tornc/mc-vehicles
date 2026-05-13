@@ -147,7 +147,7 @@ If, after completing the setup process, the mechanical bearings ever get disasse
 
 ![Location of the hopper](docs/setup/14.png)
 
-19. For the big cannon ammo, I use High Explosive with proximity fuze. Use Powder Charges or Big Cartridges. Play around the amount of charges if you want to, but keep in mind that the accuracy is horrible at longer ranges. Now load the 2 big cannons ... manually.
+19. For the big cannon ammo, I use High Explosive with proximity fuze. Use Powder Charges or Big Cartridges. Play around with the amount of charges if you want to, but keep in mind that the accuracy is horrible at longer ranges. Now load the 2 big cannons ... manually.
 
 ![Ammunition of the 2 big cannons](docs/setup/15.png)
 
