@@ -6,8 +6,8 @@ local function inject_nb(fn) return function(...) coroutine.resume(coroutine.cre
 local function time() return os.epoch("utc") * 0.001 end
 local function upv(v) return v.x, v.y, v.z end
 
-local function apn_zem()
-    --- See: https://youtu.be/dFpCL6jjIJg for APN ZEM derivation.
+local function zem_apn()
+    --- See: https://youtu.be/dFpCL6jjIJg for ZEM-APN derivation.
     --- See: https://youtu.be/sbcPfnm30vA for t_go derivation.
     --- @param r_p Vector Pursuer position
     --- @param v_p Vector Pursuer velocity
@@ -24,10 +24,9 @@ local function apn_zem()
         local Vc = -z2:dot(z1:normalize()) -- closing velocity
         -- Vc can be negative; added minimum to prevent nan/negative t_go
         local t_go = R / math.max(Vc, 1e-3)
-
-        -- zem is implicitly perpendicular to LOS because z1,2,3 are.
-        local zem_pl = z1 + z2 * t_go + z3 * t_go ^ 2
-        return zem_pl * (3 / t_go)
+        -- ZEM is implicitly perpendicular to LOS, because z1,2,3 are.
+        local zem = (z1 + z2 * t_go + z3 * (t_go ^ 2 / 2))
+        return zem * (3 / t_go ^ 2)
     end
 end
 
@@ -82,7 +81,7 @@ THRUSTER.setThrustNormalized = inject_nb(THRUSTER.setThrustNormalized)
 
 local LAUNCH_DURATION = 0.15
 local ROCKET_THRUST = 1.0
-local CTRL_NAV = apn_zem()
+local CTRL_NAV = zem_apn()
 --- @TODO: Don't bother tuning until THRUSTER.setVector(x, y) isn't quantised to 1/15ths
 --- under the hood anymore. Who on earth thought that was a good idea 😭
 local CTRL_YAW = pi(0.3, 0.1, 0.25)
